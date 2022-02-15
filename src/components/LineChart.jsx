@@ -11,13 +11,16 @@ const LineChart = ({coinHistory, currentPrice, coinName}) => {
     const coinTimeStamp = [];
     
 
-    for (let i = 0; i < coinHistory?.data?.history?.length; i += 1) {
-       
-        coinTimeStamp.push(moment(coinHistory?.data?.history[i].timestamp).format('l'));
-      }
     for(let i=0; i< coinHistory?.data?.history?.length; i += 1) {
+        
+        
         coinPrice.push(coinHistory.data.history[i].price)
     }
+    for (let i = 0; i < coinHistory?.data?.history?.length; i += 1) {
+       const date = coinHistory?.data?.history[i].timestamp
+       console.log(date);
+        coinTimeStamp.push(moment.unix(date).format('l'));
+      }
 
       const data = {
         labels: coinTimeStamp,
