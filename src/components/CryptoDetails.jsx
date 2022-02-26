@@ -5,7 +5,7 @@ import millify from 'millify';
 import { Col, Row, Typography, Select } from 'antd'
 import { MoneyCollectOutlined, DollarCircleOutlined, FundOutlined, ExclamationCircleOutlined, StopOutlined, TrophyOutlined, CheckOutlined, NumberOutlined, ThunderboltOutlined } from '@ant-design/icons'
 import LineChart from './LineChart'
-
+import Loader from './Loader';
 import { useGetCryptoDetailsQuery, useGetCoinHistoryQuery } from '../services/cryptoApi';
 
 const {Title, Text} = Typography
@@ -38,7 +38,7 @@ const CryptoDetails = () => {
     { title: 'Circulating Supply', value: `$ ${cryptoDetails?.supply?.circulating && millify(cryptoDetails?.supply?.circulating)}`, icon: <ExclamationCircleOutlined /> },
   ];
  
- if(isFetching) return 'Loading...'
+ if(isFetching) return <Loader/>
   return (
     <Col className='coin-detail-container'>
       <Col className='coin-heading-container'>
