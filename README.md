@@ -9,7 +9,7 @@
 - [Technologies used](#technologies-used)
 - [License](#license)
 - [Contributors](#contributors)
-- [Installation] (#installation)
+- [Installation](#installation)
 - [Questions](#questions)
 
 ## Technologies Used
